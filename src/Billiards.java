@@ -38,7 +38,6 @@ public class Billiards extends JFrame {
 					board.repaint();
 					Thread.sleep(10);
 				} catch (InterruptedException e) {
-					// TODO Auto-generated catch block
 					return;
 				}
 			}
