@@ -36,10 +36,10 @@ public class Ball {
 		reflect();
 		
 		
-		assert y < Board.RIGHTBOARD;
-		assert y > Board.LEFTBOARD;
-		assert x > Board.BOTTOMBOARD;
-		assert x < Board.TOPBOARD;
+		assert x < Board.RIGHTBOARD;
+		assert x > Board.LEFTBOARD;
+		assert y > Board.BOTTOMBOARD;
+		assert y < Board.TOPBOARD;
 	}
 
 	private void reflect() {
