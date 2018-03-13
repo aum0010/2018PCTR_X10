@@ -18,7 +18,7 @@ public class Billiards extends JFrame {
 
 	private Board board;
 
-	private final int N_BALL = 10+3;
+	private final int N_BALL = 10 + 3;
 	private Ball[] balls;
 
 	public Billiards() {
@@ -52,7 +52,11 @@ public class Billiards extends JFrame {
 	}
 
 	private void initBalls() {
-		// TODO init balls
+		balls = new Ball[N_BALL];
+		for (int i = 0; i < N_BALL; i++) {
+			balls[i] = new Ball();
+		}
+		board.setBalls(balls);
 	}
 
 	private class StartListener implements ActionListener {
