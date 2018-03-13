@@ -20,6 +20,31 @@ public class Billiards extends JFrame {
 
 	private final int N_BALL = 10 + 3;
 	private Ball[] balls;
+	private Hilo[] hilos;
+
+	private class Hilo extends Thread {
+
+		private Ball ball;
+
+		public Hilo(Ball ball) {
+			this.ball = ball;
+		}
+
+		@Override
+		public void run() {
+			while (true) {
+				try {
+					ball.move();
+					board.repaint();
+					Thread.sleep(10);
+				} catch (InterruptedException e) {
+					// TODO Auto-generated catch block
+					return;
+				}
+			}
+		}
+
+	}
 
 	public Billiards() {
 
@@ -70,7 +95,9 @@ public class Billiards extends JFrame {
 	private class StopListener implements ActionListener {
 		@Override
 		public void actionPerformed(ActionEvent arg0) {
-			// TODO Code is executed when stop button is pushed
+			for (int i = 0; i < N_BALL; i++) {
+				hilos[i].interrupt();
+			}
 
 		}
 	}
